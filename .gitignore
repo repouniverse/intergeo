@@ -1,5 +1,7 @@
 #Archivos no utiles
+!.gitignore
 *.log
+*.bat
 *.bmp
 *.jpg
 *.jpeg
@@ -9,6 +11,7 @@
 *.pdf
 #netbeans
 /nbproject
+vendor
 frontend/web/assets
 frontend/runtime
 frontend/config/main-local.php

@@ -84,6 +84,7 @@ class SiteController extends Controller
      */
     public function actionLogin()
     {
+        
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
         }
@@ -257,4 +258,16 @@ class SiteController extends Controller
             'model' => $model
         ]);
     }
+    
+  public function actionTestConeccionOra(){
+      $db = \Yii::$app->dbOracle;
+      try{       
+      $db->open();  
+   } catch (\yii\db\Exception $exception) {
+       echo $exception->getMessage(); 
+       return false;
+   } finally{
+       unset($db);
+   }   
+  }  
 }
