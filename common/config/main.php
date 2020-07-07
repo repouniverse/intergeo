@@ -9,6 +9,15 @@ return [
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
+          'authManager' => [
+                  'class' => 'yii\rbac\DbManager', // or use 'yii\rbac\PhpManager'
+                ],
+        'user' => [
+                // 'class' => 'mdm\admin\models\User',
+                'identityClass' => 'mdm\admin\models\User',
+                'loginUrl' => ['admin/user/login'],
+          ]
+        
     ],
     
     'modules' => [
@@ -16,4 +25,5 @@ return [
                     'class' => 'mdm\admin\Module',
                         ],
                 ],
+    
 ];
