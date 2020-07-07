@@ -6,7 +6,7 @@
 /* @var $exception Exception */
 
 use yii\helpers\Html;
-
+//un comentario
 $this->title = $name;
 ?>
 <div class="site-error">
