@@ -1,4 +1,5 @@
 <?php
+//Un comentario
 return [
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
@@ -13,7 +14,7 @@ return [
                   'class' => 'yii\rbac\DbManager', // or use 'yii\rbac\PhpManager'
                 ],
         'user' => [
-                // 'class' => 'mdm\admin\models\User',
+                'class' => 'mdm\admin\models\User',
                 'identityClass' => 'mdm\admin\models\User',
                 'loginUrl' => ['admin/user/login'],
           ]
