@@ -32,7 +32,7 @@ return [
                           'backend\database\migrations', 
                            'frontend\database\migrations',  
                              //'frontend\modules\message\database\migrations',
-                         // 'nemmo\attachments\migrations', 
+                          'nemmo\attachments\migrations', 
                           //'yii\rbac\migrations', 
                           // 'yii2mod\settings\migrations',  
                         // 'nemmo\attachments\migrations',   

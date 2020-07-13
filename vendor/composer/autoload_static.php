@@ -45,9 +45,23 @@ class ComposerStaticInitd88f84c330889b72a2493d1ff11f51c4
         array (
             'phpDocumentor\\Reflection\\' => 25,
         ),
+        'n' => 
+        array (
+            'nemmo\\attachments\\' => 18,
+        ),
         'm' => 
         array (
             'mdm\\admin\\' => 10,
+        ),
+        'k' => 
+        array (
+            'kartik\\plugins\\fileinput\\' => 25,
+            'kartik\\file\\' => 12,
+            'kartik\\base\\' => 12,
+        ),
+        'h' => 
+        array (
+            'himiklab\\colorbox\\' => 18,
         ),
         'c' => 
         array (
@@ -163,9 +177,29 @@ class ComposerStaticInitd88f84c330889b72a2493d1ff11f51c4
             1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
             2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
         ),
+        'nemmo\\attachments\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/nemmo/yii2-attachments/src',
+        ),
         'mdm\\admin\\' => 
         array (
             0 => __DIR__ . '/..' . '/mdmsoft/yii2-admin',
+        ),
+        'kartik\\plugins\\fileinput\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/bootstrap-fileinput',
+        ),
+        'kartik\\file\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-fileinput/src',
+        ),
+        'kartik\\base\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-krajee-base/src',
+        ),
+        'himiklab\\colorbox\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/himiklab/yii2-colorbox-widget',
         ),
         'cebe\\markdown\\' => 
         array (

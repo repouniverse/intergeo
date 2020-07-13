@@ -84,4 +84,40 @@ return array (
       '@yii2mod/settings' => $vendorDir . '/yii2mod/yii2-settings',
     ),
   ),
+  'himiklab/yii2-colorbox-widget' => 
+  array (
+    'name' => 'himiklab/yii2-colorbox-widget',
+    'version' => '9999999-dev',
+    'alias' => 
+    array (
+      '@himiklab/colorbox' => $vendorDir . '/himiklab/yii2-colorbox-widget',
+    ),
+  ),
+  'kartik-v/yii2-krajee-base' => 
+  array (
+    'name' => 'kartik-v/yii2-krajee-base',
+    'version' => '9999999-dev',
+    'alias' => 
+    array (
+      '@kartik/base' => $vendorDir . '/kartik-v/yii2-krajee-base/src',
+    ),
+  ),
+  'kartik-v/yii2-widget-fileinput' => 
+  array (
+    'name' => 'kartik-v/yii2-widget-fileinput',
+    'version' => '9999999-dev',
+    'alias' => 
+    array (
+      '@kartik/file' => $vendorDir . '/kartik-v/yii2-widget-fileinput/src',
+    ),
+  ),
+  'nemmo/yii2-attachments' => 
+  array (
+    'name' => 'nemmo/yii2-attachments',
+    'version' => '1.0.0.0-beta3',
+    'alias' => 
+    array (
+      '@nemmo/attachments' => $vendorDir . '/nemmo/yii2-attachments/src',
+    ),
+  ),
 );
