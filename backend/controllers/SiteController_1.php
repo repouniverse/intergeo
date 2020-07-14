@@ -1,37 +1,30 @@
 <?php
 namespace backend\controllers;
-
 use Yii;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use common\models\LoginForm;
+use common\models\masters\Documentos;
+use common\traits\baseTrait;
+use yii\helpers\Json;
+use console\components\Command;
 
+use backend\components\Installer;
 /**
  * Site controller
  */
 class SiteController extends Controller
 {
+    use baseTrait;
+    
     /**
      * {@inheritdoc}
      */
     public function behaviors()
     {
         return [
-            'access' => [
-                'class' => AccessControl::className(),
-                'rules' => [
-                    [
-                        'actions' => ['login', 'error'],
-                        'allow' => true,
-                    ],
-                    [
-                        'actions' => ['logout', 'index'],
-                        'allow' => true,
-                        'roles' => ['@'],
-                    ],
-                ],
-            ],
+            
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
@@ -46,11 +39,11 @@ class SiteController extends Controller
      */
     public function actions()
     {
-        return [
+        /*return [
             'error' => [
                 'class' => 'yii\web\ErrorAction',
             ],
-        ];
+        ];*/
     }
 
     /**
@@ -60,7 +53,30 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+       if(Installer::isFileEnv()){            
+            if(!Installer::alreadyInstalled()){
+                return  Yii::$app->controller->redirect(['install/language'])->send();
+             }
+        }else{
+           
+            if(static::isFileEnvExample()){
+                //copiar al archivio .env
+                 Installer::createDefaultEnvFile();
+                 //redirigr al instalador
+                Installer::redirectInstall();
+            }else{
+                //lanzar el error 
+                throw new \yii\base\Exception(
+                   yii::t('install.errors','The  \'.env.example\' file  don\'t exists, please check for it')
+                   ); 
+            }
+            
+        }
+           
+        if(!Yii::$app->user->isGuest)        
+          return $this->render('index');     
+          $this->redirect('login');
+       
     }
 
     /**
@@ -70,6 +86,7 @@ class SiteController extends Controller
      */
     public function actionLogin()
     {
+        $this->layout='install';
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
         }
@@ -80,7 +97,7 @@ class SiteController extends Controller
         } else {
             $model->password = '';
 
-            return $this->render('login', [
+            return $this->render('loginSite', [
                 'model' => $model,
             ]);
         }
@@ -98,7 +115,14 @@ class SiteController extends Controller
         return $this->goHome();
     }
     
-    public function actionClasesParametros (){
+    
+    
+    public function actionHola()
+    {
+        echo ('hola');
+    }
+    
+    private function verifyInstalled(){
         
     }
 }

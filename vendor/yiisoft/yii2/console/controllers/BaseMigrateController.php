@@ -793,6 +793,7 @@ abstract class BaseMigrateController extends Controller
      */
     protected function includeMigrationFile($class)
     {
+        
         $class = trim($class, '\\');
         if (strpos($class, '\\') === false) {
             if (is_array($this->migrationPath)) {

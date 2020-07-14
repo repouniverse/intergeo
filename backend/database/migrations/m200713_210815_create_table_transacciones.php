@@ -22,7 +22,10 @@ if(!$this->existsTable($table)){
              'codigo'=>$this->string(7)->notNull()->append($this->collateColumn()),
             'descripcion' => $this->string(6)->notNull()->append($this->collateColumn()),
             'item' => $this->string(64)->notNull()->append($this->collateColumn()), 
-             ], $this->collateTable());
+             'deterministico' => $this->char(1)->append($this->collateColumn()), 
+            'grupo' => $this->char(3)->append($this->collateColumn()), 
+            
+            ], $this->collateTable());
       $this->addPrimaryKey('pk_transac',$table, 'codigo');
          $this->addForeignKey($this->generateNameFk($table), $table,
               'item', static::NAME_TABLE_RBAC_ITEMS,'name');
