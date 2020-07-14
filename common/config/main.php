@@ -7,6 +7,24 @@ return [
     ],
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'components' => [
+        'urlManager' => [
+                'class' => 'yii\web\UrlManager',
+                    // Disable index.php
+                        'showScriptName' => false,
+                        // Disable r= routes
+                                'enablePrettyUrl' => true,
+                        'rules' => array(
+            '<controller:\w+>/<id:\d+>' => '<controller>/view',
+            '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
+            '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
+                    ),
+                ],
+        
+        'settings' => [
+        'class' => 'yii2mod\settings\components\Settings',
+        'cache'=>['class'=>'yii\caching\FileCache'],
+             ],
+        
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
@@ -14,7 +32,7 @@ return [
                   'class' => 'yii\rbac\DbManager', // or use 'yii\rbac\PhpManager'
                 ],
         'user' => [
-            'class' => 'mdm\admin\models\User',
+            //'class' => 'mdm\admin\models\User',
         'identityClass' => 'mdm\admin\models\User',
             //'class' => 'mdm\admin\models\User',
         'loginUrl' => ['admin/user/login'],
@@ -23,6 +41,10 @@ return [
     ],
     
     'modules' => [
+                'settings' => [
+                        'class' => 'yii2mod\settings\Module',
+                    ],
+        
                  'admin' => [
                     'class' => 'mdm\admin\Module',
                         ],
