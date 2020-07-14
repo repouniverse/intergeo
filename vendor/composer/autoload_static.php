@@ -41,6 +41,10 @@ class ComposerStaticInitd88f84c330889b72a2493d1ff11f51c4
             'yii2mod\\enum\\' => 13,
             'yii2mod\\editable\\' => 17,
         ),
+        'r' => 
+        array (
+            'rmrevin\\yii\\fontawesome\\' => 24,
+        ),
         'p' => 
         array (
             'phpDocumentor\\Reflection\\' => 25,
@@ -62,6 +66,10 @@ class ComposerStaticInitd88f84c330889b72a2493d1ff11f51c4
         'h' => 
         array (
             'himiklab\\colorbox\\' => 18,
+        ),
+        'd' => 
+        array (
+            'dmstr\\' => 6,
         ),
         'c' => 
         array (
@@ -171,6 +179,10 @@ class ComposerStaticInitd88f84c330889b72a2493d1ff11f51c4
         array (
             0 => __DIR__ . '/..' . '/yii2mod/yii2-editable',
         ),
+        'rmrevin\\yii\\fontawesome\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/rmrevin/yii2-fontawesome',
+        ),
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
@@ -200,6 +212,10 @@ class ComposerStaticInitd88f84c330889b72a2493d1ff11f51c4
         'himiklab\\colorbox\\' => 
         array (
             0 => __DIR__ . '/..' . '/himiklab/yii2-colorbox-widget',
+        ),
+        'dmstr\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/dmstr/yii2-adminlte-asset',
         ),
         'cebe\\markdown\\' => 
         array (
@@ -346,6 +362,13 @@ class ComposerStaticInitd88f84c330889b72a2493d1ff11f51c4
     );
 
     public static $prefixesPsr0 = array (
+        'c' => 
+        array (
+            'cebe\\gravatar\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/cebe/yii2-gravatar',
+            ),
+        ),
         'H' => 
         array (
             'HTMLPurifier' => 

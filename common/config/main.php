@@ -32,11 +32,16 @@ return [
                   'class' => 'yii\rbac\DbManager', // or use 'yii\rbac\PhpManager'
                 ],
         'user' => [
-           'class' => 'mdm\admin\models\User',
-        'identityClass' => 'mdm\admin\models\User',
+           'class' => 'common\components\User',
+        //'identityClass' => 'mdm\admin\models\User',
+            'identityClass' => 'common\models\User',
+        //'loginUrl' => ['admin/user/login'],
             //'class' => 'mdm\admin\models\User',
         'loginUrl' => ['admin/user/login'],
                ]
+        
+         
+        
         
     ],
     

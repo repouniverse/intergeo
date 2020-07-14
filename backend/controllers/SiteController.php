@@ -98,6 +98,12 @@ class SiteController extends Controller
         return $this->goHome();
     }
     
+    /*
+     * Esta funcion determinaa las clases de 
+     * parametros para los settings
+     * se vale del modulo settings 
+     * para ocfiugfirarlso
+     */
     public function actionClasesParametros (){
         
     }
