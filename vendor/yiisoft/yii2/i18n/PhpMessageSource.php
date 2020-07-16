@@ -68,6 +68,7 @@ class PhpMessageSource extends MessageSource
      */
     protected function loadMessages($category, $language)
     {
+        yii::error('sacando');
         $messageFile = $this->getMessageFilePath($category, $language);
         $messages = $this->loadMessagesFromFile($messageFile);
 
@@ -135,12 +136,13 @@ class PhpMessageSource extends MessageSource
     protected function getMessageFilePath($category, $language)
     {
         $messageFile = Yii::getAlias($this->basePath) . "/$language/";
+        
         if (isset($this->fileMap[$category])) {
             $messageFile .= $this->fileMap[$category];
         } else {
             $messageFile .= str_replace('\\', '/', $category) . '.php';
         }
-
+      //ECHO $messageFile; DIE();
         return $messageFile;
     }
 

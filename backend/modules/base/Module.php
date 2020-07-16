@@ -1,7 +1,6 @@
 <?php
-
 namespace backend\modules\base;
-
+use yii;
 /**
  * base module definition class
  */
@@ -17,8 +16,28 @@ class Module extends \yii\base\Module
      */
     public function init()
     {
-        parent::init();
-
-        // custom initialization code goes here
+       parent::init();
+        $this->registerTranslations();
     }
+    
+    public function registerTranslations()
+    {
+        Yii::$app->i18n->translations['modules/base/*'] = [
+            'class' => 'yii\i18n\PhpMessageSource',
+            'sourceLanguage' => 'en-US',
+            'basePath' => '@backend/modules/base/messages',
+            'fileMap' => [
+                'modules/base/verbs' => 'verbs.php',
+                'modules/base/validaciones' => 'validaciones.php',
+                
+            ],
+        ];
+    }
+
+    public static function t($category, $message, $params = [], $language = null)
+    {
+        return Yii::t('modules/base/' . $category, $message, $params, $language);
+    }
+    
+    
 }

@@ -1,7 +1,7 @@
 <?php
 
 namespace backend\modules\base\controllers;
-
+use backend\modules\base\Module;
 use yii\web\Controller;
 use common\models\masters\Combovalores;
 use yii2mod\settings\models\SettingModel;
@@ -16,6 +16,8 @@ class DefaultController extends Controller
      */
     public function actionIndex()
     {
+        echo Module::t('verbs','Edit');
+        die();
         return $this->render('index');
     }
     
