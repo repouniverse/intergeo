@@ -7,16 +7,51 @@ $params = array_merge(
 );
 
 return [
+    /*
+     * Ojo : para cambiar dináimcamente el lenguaje
+     * se debe de hacer lo siguiente
+     * // change target language to Chinese
+        \Yii::$app->language = 'zh-CN';
+     */
+     'language' => 'es-PE',
+    
+    // set source language to be English
+    'sourceLanguage' => 'en-US',
+    'name'=>'Administrador',
     'id' => 'app-backend',
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
-    'modules' => [],
-    'components' => [
+   'modules' => [
+        'base' => [
+            'class' => 'backend\modules\base\Module',
+        ],
+    ],
+    'components' => [        
+        'i18n' => [
+                    'translations' => [
+                                    'backend.base' => [
+                                            'class' => 'yii\i18n\PhpMessageSource',
+                                            'sourceLanguage' => 'en-US',
+                                            'basePath' => '@backend/messages'
+                                            ],
+                                    ],
+                ],
+       'assetManager'=>[
+               'bundles'=>[
+                   'dmstr\web\AdminLteAsset'=>['skin'=>'skin-red-light'],
+                   /*'yii\web\JqueryAsset' => [
+                                        'js' => [YII_DEBUG ? 'https://code.jquery.com/jquery-3.2.1.js' : 'https://code.jquery.com/jquery-3.2.1.min.js'],
+                                        'jsOptions' => ['type' => 'text/javascript'],
+                                            ],*/
+                             ],
+                        ],
         'view' => [
                     'theme' => [
                             'pathMap' => [
-                                             '@app/views' => '@vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app'
+                                             '@app/views' => '@backend/views/skins/apariencia_1/',
+                                           // '@app/views' => '@vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app'
+                                            
                                             ],
                                 ],
                     ],

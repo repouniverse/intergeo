@@ -821,11 +821,14 @@ class modelBase extends \yii\db\ActiveRecord
         
         
         public  static function  firstOrCreateStatic($attributes,$scenario=null,$verifyAttributes=null){  
+          
             //print_r($attributes);
             //$model=self::find()->where($attributes)->one();
             $myAttributesVerify=(is_null($verifyAttributes))?$attributes:$verifyAttributes;
             //yii::error($myAttributesVerify); 
-            if(!self::find()->where($myAttributesVerify)->exists()){
+            //yii::error($myAttributesVerify);
+           // echo self::find()->andWhere($myAttributesVerify)->createCommand()->getRawSql();die();
+            if(!(self::find()->andWhere(['user_id'=>1]/*$myAttributesVerify*/)->exists())){
                          //yii::error($myAttributesVerify);       
 
                 try{
@@ -838,9 +841,10 @@ class modelBase extends \yii\db\ActiveRecord
                        $model->attributes=$attributes;
                        //print_r($model->attributes);die();
                        
-                 IF(!$model->insert()){
+                 IF(!$model->save()){
+                     echo "fallo";die();
                      yii::error($model->getErrors(),__METHOD__);
-                      //print_r($model->getErrors());die();
+                     // print_r($model->getErrors());die();
                      return false;
                  }
                    // print_r($model->getErrors());die();
@@ -854,7 +858,7 @@ class modelBase extends \yii\db\ActiveRecord
              } 
                 
             } else{
-               
+               yii::error('ya  existe');
                 return false;
             }
             

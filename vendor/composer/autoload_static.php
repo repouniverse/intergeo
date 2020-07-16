@@ -59,6 +59,8 @@ class ComposerStaticInitd88f84c330889b72a2493d1ff11f51c4
         ),
         'k' => 
         array (
+            'kartik\\tabs\\' => 12,
+            'kartik\\plugins\\tabs\\' => 20,
             'kartik\\plugins\\fileinput\\' => 25,
             'kartik\\file\\' => 12,
             'kartik\\base\\' => 12,
@@ -196,6 +198,14 @@ class ComposerStaticInitd88f84c330889b72a2493d1ff11f51c4
         'mdm\\admin\\' => 
         array (
             0 => __DIR__ . '/..' . '/mdmsoft/yii2-admin',
+        ),
+        'kartik\\tabs\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-tabs-x/src',
+        ),
+        'kartik\\plugins\\tabs\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/bootstrap-tabs-x',
         ),
         'kartik\\plugins\\fileinput\\' => 
         array (

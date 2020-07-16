@@ -1,12 +1,33 @@
 <?php
 //Un comentario
-return [
+return [  
+    
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
     ],
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'components' => [
+        'log' => [
+            'targets' => [
+                [
+                    'class' => 'yii\log\DbTarget',
+                    'levels' => ['error'/*, 'warning','info','debug'*/],
+                ],
+                [
+                    'class' => 'yii\log\EmailTarget',
+                    'levels' => ['error'],
+                   // 'categories' => ['yii\db\*'],  todos los errores
+                    'message' => [
+                       'from' => ['log@example.com'],
+                       'to' => ['hipogea@hotmail.com',/* 'developer@example.com'*/],
+                       'subject' => 'Database errors at example.com',
+                    ],
+                ],
+            ],
+        ],
+        
+        
         'urlManager' => [
                 'class' => 'yii\web\UrlManager',
                     // Disable index.php
