@@ -21,7 +21,9 @@ class TransaccionesSearch extends Transacciones
             [['name', 'esruta', 'grupo','transaccion'], 'safe'],
         ];
     }
-
+/*
+ * comentario
+ */
     /**
      * {@inheritdoc}
      */
