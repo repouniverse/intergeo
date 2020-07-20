@@ -27,9 +27,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            'nombreModelo',
-            'nombreCampo',
-            'parametro',
+           'name','transaccion','esruta','description','grupo',
             
             //'valor1',
             //'valor2',
@@ -44,7 +42,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         ];
                        // return Html::a('<span class="btn btn-info btn-sm glyphicon glyphicon-pencil"></span>', $url, $options/*$options*/);
                          
-                         $url= \yii\helpers\Url::toRoute(['update-campo-valores','id'=>$model->id]);
+                         $url= \yii\helpers\Url::toRoute(['update-campo-valores','id'=>$model->name]);
                         $options = [
                             'data-pjax'=>'0',
                             //'target'=>'_blank',
@@ -53,13 +51,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         return Html::a('<span class="btn btn-info btn-sm glyphicon glyphicon-pencil"></span>', $url, $options/*$options*/);
                       
                     },
-                    'delete' => function($url, $model) {
-                        $options = [
-                                        'title' =>m::t('verbs', 'Delete'),                            
-                                    ];
-                        $url = \yii\helpers\Url::toRoute($this->context->id.'/deletemodel-for-ajax');
-                              return \yii\helpers\Html::a('<span class="btn btn-info btn-sm glyphicon glyphicon-trash"></span>', '#', ['title'=>$url,/*'id'=>$model->codparam,*/'family'=>'holas','id'=>\yii\helpers\Json::encode(['id'=>$model->id,'modelito'=> str_replace('@','\\',get_class($model))]),/*'title' => 'Borrar'*/]);
-                     },
+                    
                     ]
                 ],
         ],
