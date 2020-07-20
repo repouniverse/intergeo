@@ -156,4 +156,13 @@ return array (
       '@kartik/tabs' => $vendorDir . '/kartik-v/yii2-tabs-x/src',
     ),
   ),
+  'shifrin/yii2-noty' => 
+  array (
+    'name' => 'shifrin/yii2-noty',
+    'version' => '9999999-dev',
+    'alias' => 
+    array (
+      '@shifrin/noty' => $vendorDir . '/shifrin/yii2-noty',
+    ),
+  ),
 );

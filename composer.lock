@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7f3589df536ada557fa8fca9e5e59142",
+    "content-hash": "64948db4f94351d2bbaa2278a726685b",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -127,6 +127,21 @@
             },
             "type": "bower-asset",
             "time": "2018-03-30T18:04:42+00:00"
+        },
+        {
+            "name": "bower-asset/noty",
+            "version": "v2.4.1",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:needim/noty.git",
+                "reference": "ebb543ef0a3c039cdb7cdae887197ffa43433d52"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/needim/noty/zipball/ebb543ef0a3c039cdb7cdae887197ffa43433d52",
+                "reference": "ebb543ef0a3c039cdb7cdae887197ffa43433d52"
+            },
+            "type": "bower-asset"
         },
         {
             "name": "bower-asset/punycode",
@@ -1004,6 +1019,51 @@
                 "yii"
             ],
             "time": "2018-04-01T12:51:52+00:00"
+        },
+        {
+            "name": "shifrin/yii2-noty",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Shifrin/yii2-noty.git",
+                "reference": "8ecf970f8a14fac9866f38ca57bc5e74345210ed"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Shifrin/yii2-noty/zipball/8ecf970f8a14fac9866f38ca57bc5e74345210ed",
+                "reference": "8ecf970f8a14fac9866f38ca57bc5e74345210ed",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/noty": "^2.3",
+                "yiisoft/yii2": ">=2.0.6"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "shifrin\\noty\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mohammed Shifreen",
+                    "email": "mshifreen@gmail.com"
+                }
+            ],
+            "description": "Yii widget for Noty jQuery notification plugin",
+            "keywords": [
+                "alert",
+                "flash",
+                "message",
+                "notification",
+                "noty",
+                "yii2"
+            ],
+            "time": "2016-02-21T08:22:50+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -5247,7 +5307,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "kartik-v/yii2-tabs-x": 20
+        "kartik-v/yii2-tabs-x": 20,
+        "shifrin/yii2-noty": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

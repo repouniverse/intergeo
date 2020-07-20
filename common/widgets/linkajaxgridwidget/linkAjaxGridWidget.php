@@ -84,7 +84,7 @@ class linkAjaxGridWidget extends Widget
      
     if(!yapaso){  
 $.ajax({
-              url: this.href,
+              url: this.title,
               
               type: '".$this->type."',
               data:".((count($this->data)==0)?'JSON.parse(this.id)':Json::encode($this->data)). "    ,
@@ -106,16 +106,16 @@ $.ajax({
                              
 
                        if ( !(typeof json['error']==='undefined') ) {
-                        $.noty.setText(n.options.id,'<span class=\'glyphicon glyphicon-trash\'></span>      '+ json['error']);
+                        $.noty.setText(n.options.id,'<span class=\'glyphicon glyphicon-remove\'></span>      '+ json['error']);
                               $.noty.setType(n.options.id, 'error');  
                           }    
 
                              if ( !(typeof json['warning']==='undefined' )) {
-                        $.noty.setText(n.options.id,'<span class=\'glyphicon glyphicon-trash\'></span>      '+ json['warning']);
+                        $.noty.setText(n.options.id,'<span class=\'glyphicon glyphicon-exclamation-sign\'></span>      '+ json['warning']);
                               $.noty.setType(n.options.id, 'warning');  
                              } 
                           if ( !(typeof json['success']==='undefined' )) {
-                        $.noty.setText(n.options.id,'<span class=\'glyphicon glyphicon-trash\'></span>      '+ json['success']);
+                        $.noty.setText(n.options.id,'<span class=\'glyphicon glyphicon-ok\'></span>      '+ json['success']);
                               $.noty.setType(n.options.id, 'success');  
                              } 
                             

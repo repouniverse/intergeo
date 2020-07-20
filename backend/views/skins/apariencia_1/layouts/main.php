@@ -40,6 +40,29 @@ if (Yii::$app->controller->action->id === 'login') {
     <?php $this->beginBody() ?>
     <div class="wrapper">
 
+        <?php \shifrin\noty\NotyWidget::widget([
+    'options' => [ // you can add js options here, see noty plugin page for available options
+        'dismissQueue' => true,
+        'layout' => 'center',
+        'theme' => 'metroui',
+        'animation' => [
+            'open' => 'animated flipInX',
+            'close' => 'animated flipOutX',
+        ],
+        'timeout' =>1000, //false para que no se borre
+        'progressBar'=>true,
+    ],
+    'enableSessionFlash' => true,
+    'enableIcon' => true,
+    'registerAnimateCss' => true,
+    'registerButtonsCss' => true,
+    'registerFontAwesomeCss' => true,
+]); ?>
+        
+        
+        
+        
+        
         <?= $this->render(
             'header.php',
             ['directoryAsset' => $directoryAsset]

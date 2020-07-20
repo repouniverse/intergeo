@@ -192,6 +192,23 @@
         "installation-source": "source"
     },
     {
+        "name": "bower-asset/noty",
+        "version": "v2.4.1",
+        "version_normalized": "2.4.1.0",
+        "source": {
+            "type": "git",
+            "url": "git@github.com:needim/noty.git",
+            "reference": "ebb543ef0a3c039cdb7cdae887197ffa43433d52"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/needim/noty/zipball/ebb543ef0a3c039cdb7cdae887197ffa43433d52",
+            "reference": "ebb543ef0a3c039cdb7cdae887197ffa43433d52"
+        },
+        "type": "bower-asset",
+        "installation-source": "dist"
+    },
+    {
         "name": "bower-asset/punycode",
         "version": "v1.3.2",
         "version_normalized": "1.3.2.0",
@@ -3412,6 +3429,53 @@
         ],
         "description": "Library that helps with managing the version number of Git-hosted PHP projects",
         "homepage": "https://github.com/sebastianbergmann/version"
+    },
+    {
+        "name": "shifrin/yii2-noty",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Shifrin/yii2-noty.git",
+            "reference": "8ecf970f8a14fac9866f38ca57bc5e74345210ed"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Shifrin/yii2-noty/zipball/8ecf970f8a14fac9866f38ca57bc5e74345210ed",
+            "reference": "8ecf970f8a14fac9866f38ca57bc5e74345210ed",
+            "shasum": ""
+        },
+        "require": {
+            "bower-asset/noty": "^2.3",
+            "yiisoft/yii2": ">=2.0.6"
+        },
+        "time": "2016-02-21T08:22:50+00:00",
+        "type": "yii2-extension",
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "shifrin\\noty\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Mohammed Shifreen",
+                "email": "mshifreen@gmail.com"
+            }
+        ],
+        "description": "Yii widget for Noty jQuery notification plugin",
+        "keywords": [
+            "alert",
+            "flash",
+            "message",
+            "notification",
+            "noty",
+            "yii2"
+        ]
     },
     {
         "name": "swiftmailer/swiftmailer",

@@ -198,8 +198,8 @@ class ConfiguracionController extends baseController
         if ($model->load(Yii::$app->request->post()) ) {
            
            IF($model->save()){
-               
-            return $this->redirect(['index_campos_valores', 'id' => $model->id]);
+                h::session()->setFlash('success',m::t('labels','The record was saved...!'));
+            return $this->redirect(['index-campos-valores', 'id' => $model->id]);
           
            }
         }else{

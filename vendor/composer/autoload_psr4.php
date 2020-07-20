@@ -16,6 +16,7 @@ return array(
     'yii2mod\\settings\\' => array($vendorDir . '/yii2mod/yii2-settings'),
     'yii2mod\\enum\\' => array($vendorDir . '/yii2mod/yii2-enum'),
     'yii2mod\\editable\\' => array($vendorDir . '/yii2mod/yii2-editable'),
+    'shifrin\\noty\\' => array($vendorDir . '/shifrin/yii2-noty'),
     'rmrevin\\yii\\fontawesome\\' => array($vendorDir . '/rmrevin/yii2-fontawesome'),
     'phpDocumentor\\Reflection\\' => array($vendorDir . '/phpdocumentor/reflection-common/src', $vendorDir . '/phpdocumentor/reflection-docblock/src', $vendorDir . '/phpdocumentor/type-resolver/src'),
     'nemmo\\attachments\\' => array($vendorDir . '/nemmo/yii2-attachments/src'),

@@ -41,6 +41,10 @@ class ComposerStaticInitd88f84c330889b72a2493d1ff11f51c4
             'yii2mod\\enum\\' => 13,
             'yii2mod\\editable\\' => 17,
         ),
+        's' => 
+        array (
+            'shifrin\\noty\\' => 13,
+        ),
         'r' => 
         array (
             'rmrevin\\yii\\fontawesome\\' => 24,
@@ -180,6 +184,10 @@ class ComposerStaticInitd88f84c330889b72a2493d1ff11f51c4
         'yii2mod\\editable\\' => 
         array (
             0 => __DIR__ . '/..' . '/yii2mod/yii2-editable',
+        ),
+        'shifrin\\noty\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/shifrin/yii2-noty',
         ),
         'rmrevin\\yii\\fontawesome\\' => 
         array (

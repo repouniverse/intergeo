@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <h4><span class="fa fa-cogs"></span><?= "   -    ".Html::encode($this->title) ?></h4>
    <div class="box box-body box-success">
-    <?php Pjax::begin(); ?>
+    <?php Pjax::begin(['id'=>'migrillaPjax','timeout'=>false]); ?>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
@@ -58,7 +58,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                         'title' =>m::t('verbs', 'Delete'),                            
                                     ];
                         $url = \yii\helpers\Url::toRoute($this->context->id.'/deletemodel-for-ajax');
-                              return \yii\helpers\Html::a('<span class="btn btn-info btn-sm glyphicon glyphicon-trash"></span>', '#', ['href'=>$url,/*'id'=>$model->codparam,*/'family'=>'holas','id'=>\yii\helpers\Json::encode(['id'=>$model->id,'modelito'=> str_replace('@','\\',get_class($model))]),/*'title' => 'Borrar'*/]);
+                              return \yii\helpers\Html::a('<span class="btn btn-info btn-sm glyphicon glyphicon-trash"></span>', '#', ['title'=>$url,/*'id'=>$model->codparam,*/'family'=>'holas','id'=>\yii\helpers\Json::encode(['id'=>$model->id,'modelito'=> str_replace('@','\\',get_class($model))]),/*'title' => 'Borrar'*/]);
                      },
                     ]
                 ],
@@ -68,7 +68,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php 
    echo linkAjaxGridWidget::widget([
           
-            'idGrilla'=>'mi-grilla',
+            'idGrilla'=>'migrillaPjax',
             'family'=>'holas',
           'type'=>'POST',
            'evento'=>'click',
