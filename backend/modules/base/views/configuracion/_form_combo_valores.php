@@ -12,11 +12,14 @@ use backend\modules\base\Module as m;
 <div class="combovalores-form">
 
     <?php $form = ActiveForm::begin(); ?>
-
+       <div class="form-group">
+        <?= Html::submitButton('<span class="fa fa-save"></span>    '.m::t('verbs', 'Save'), ['class' => 'btn btn-success']) ?>
+         <?=($model->isNewRecord)?'':common\widgets\auditwidget\auditWidget::widget(['model'=>$model])?>
+        </div>
      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
        <?= $form->field($model, 'nombretabla')->
             dropDownList(h::getCboTables(),
-                    ['prompt'=>'--'.yii::t('backend.base','Save')."--",
+                    ['prompt'=>'--'.yii::t('base.labels','Choose a value')."--",
                     // 'class'=>'probandoSelect2',
                         ]
                     ) ?>
@@ -32,9 +35,7 @@ use backend\modules\base\Module as m;
     <?= $form->field($model, 'valor')->textInput(['maxlength' => true]) ?>
 </div>
     
-    <div class="form-group">
-        <?= Html::submitButton(m::t('verbs', 'Save'), ['class' => 'btn btn-success']) ?>
-    </div>
+    
 
     <?php ActiveForm::end(); ?>
 

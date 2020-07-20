@@ -150,7 +150,7 @@ class ConfiguracionController extends baseController
          $searchModel = new CombovaloresSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
-        return $this->render('index-combo-valores', [
+        return $this->render('index_combo_valores', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
@@ -173,7 +173,7 @@ class ConfiguracionController extends baseController
         $model = new Combovalores();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view_combo_valores', 'id' => $model->id]);
+            return $this->redirect(['index-combo-valores', 'id' => $model->id]);
         }
 
         return $this->render('create_combo_valores', [
@@ -181,6 +181,37 @@ class ConfiguracionController extends baseController
         ]);
     }
 
+     public function actionUpdateComboValores($id)
+    {
+        $model = \common\models\masters\ComboValores::findOne($id);
+      if(!is_null($model)){
+        if (h::request()->isAjax && $model->load(h::request()->post())) {
+                h::response()->format = Response::FORMAT_JSON;
+                return ActiveForm::validate($model);
+        }
+        
+        if ($model->load(Yii::$app->request->post()) ) {
+            //$model->nombreCampo=h::request()->post()['ModelCombo']['nombreCampo'];
+            //$model->nombreModelo= \common\helpers\FileHelper::getShortName(h::request()->post()['ModelCombo']['nombreModelo']);
+          
+            if($model->save()){
+                 h::session()->setFlash('success',m::t('labels','The record was saved...!'));
+            return $this->redirect(['index-combo-valores']);
+            }  else{
+                //print_r($model->getErrors());die();
+            }
+           
+        }
+
+        return $this->render('update_combo_valores', [
+            'model' => $model,
+        ]);
+       }else{
+         throw new NotFoundHttpException(Yii::t('base.errors', 'The requested page does not exist.'));
+     
+       }
+    }
+    
     
     public function actionIndexCamposValores(){
          $searchModel = new \common\models\masters\ModelComboSearch();
@@ -242,5 +273,16 @@ class ConfiguracionController extends baseController
      
        }
     }
+   
+    
+ public function actionIndexTransacciones(){
+      $searchModel = new \common\models\masters\TransaccionesSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+          return $this->render('index_transacciones', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+ }   
+    
     
 }

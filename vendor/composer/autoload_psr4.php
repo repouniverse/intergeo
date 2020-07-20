@@ -21,6 +21,7 @@ return array(
     'phpDocumentor\\Reflection\\' => array($vendorDir . '/phpdocumentor/reflection-common/src', $vendorDir . '/phpdocumentor/reflection-docblock/src', $vendorDir . '/phpdocumentor/type-resolver/src'),
     'nemmo\\attachments\\' => array($vendorDir . '/nemmo/yii2-attachments/src'),
     'mdm\\admin\\' => array($vendorDir . '/mdmsoft/yii2-admin'),
+    'lo\\widgets\\modal\\' => array($vendorDir . '/loveorigami/yii2-modal-ajax/src'),
     'kartik\\tabs\\' => array($vendorDir . '/kartik-v/yii2-tabs-x/src'),
     'kartik\\plugins\\tabs\\' => array($vendorDir . '/kartik-v/bootstrap-tabs-x'),
     'kartik\\plugins\\fileinput\\' => array($vendorDir . '/kartik-v/bootstrap-fileinput'),

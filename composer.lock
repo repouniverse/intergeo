@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "64948db4f94351d2bbaa2278a726685b",
+    "content-hash": "062f76ab8a054adfc86e18c6d6560946",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -846,6 +846,50 @@
                 }
             ],
             "time": "2020-06-02T17:24:23+00:00"
+        },
+        {
+            "name": "loveorigami/yii2-modal-ajax",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/loveorigami/yii2-modal-ajax.git",
+                "reference": "8bc23b8ad16390d42b37ab155bc030902b881fcd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/loveorigami/yii2-modal-ajax/zipball/8bc23b8ad16390d42b37ab155bc030902b881fcd",
+                "reference": "8bc23b8ad16390d42b37ab155bc030902b881fcd",
+                "shasum": ""
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "lo\\widgets\\modal\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Karnbrock Gmbh",
+                    "homepage": "http://karnbrock.biz"
+                },
+                {
+                    "name": "Lukyanov Andrey",
+                    "homepage": "http://loveorigami.info"
+                }
+            ],
+            "description": "A wrapper around Yii2 Bootstrap Modal for using an ActiveForm via AJAX inside",
+            "homepage": "https://github.com/loveorigami/yii2-modal-ajax",
+            "keywords": [
+                "ajax-modal",
+                "bootstrap",
+                "modal",
+                "yii2"
+            ],
+            "time": "2019-06-10T06:44:42+00:00"
         },
         {
             "name": "mdmsoft/yii2-admin",
@@ -5308,7 +5352,8 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "kartik-v/yii2-tabs-x": 20,
-        "shifrin/yii2-noty": 20
+        "shifrin/yii2-noty": 20,
+        "loveorigami/yii2-modal-ajax": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

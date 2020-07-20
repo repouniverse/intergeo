@@ -13,6 +13,15 @@ use Yii;
  */
 class ModelCombo extends \common\models\base\modelBase
 {
+  
+    public function behaviors() {
+        return [          
+            'auditoriaBehavior' => [
+                'class' => '\common\behaviors\AuditBehavior',
+            ],
+        ];
+    }
+    
     
    // public $nombreModelo=null;
    // public $nombreCampo=null;

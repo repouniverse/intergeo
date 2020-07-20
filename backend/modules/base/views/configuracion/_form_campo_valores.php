@@ -17,6 +17,7 @@ use backend\modules\base\Module as m;
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="form-group">
         <?= Html::submitButton('<span class="fa fa-save"></span>    '.m::t('verbs', 'Save'), ['class' => 'btn btn-success']) ?>
+         <?=($model->isNewRecord)?'':common\widgets\auditwidget\auditWidget::widget(['model'=>$model])?>
         </div>
     </div>
     

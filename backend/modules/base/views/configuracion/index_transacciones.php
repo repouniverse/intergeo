@@ -7,34 +7,30 @@ use yii\widgets\Pjax;
 /* @var $this yii\web\View */
 /* @var $searchModel common\models\masters\CombovaloresSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
-$this->title = m::t('labels', 'Dropdown Values Table');
+
+$this->title = m::t('labels', 'Field Settings');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="combovalores-index">
 
-    <?php Pjax::begin(); ?>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-<h4><span class="fa fa-cogs"></span><?= "   -    ".Html::encode($this->title) ?></h4>
-<div class="box box-body box-success">
-       <p>
-        <?= Html::a('<span class="fa fa-file"></span>    '.m::t('verbs', 'Create'), ['create-combo-valores'], ['class' => 'btn btn-success']) ?>
-    </p>
-       <?php Pjax::begin(['id'=>'migrillaPjax','timeout'=>false]); ?>
+    <h4><span class="fa fa-cogs"></span><?= "   -    ".Html::encode($this->title) ?></h4>
+   <div class="box box-body box-success">
+    <?php Pjax::begin(['id'=>'migrillaPjax','timeout'=>false]); ?>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
-    
+    <p>
+        <?= Html::a('<span class="fa fa-file"></span>    '.m::t('verbs', 'Create'), ['create-campo-valores'], ['class' => 'btn btn-success']) ?>
+    </p>
 
     <?= GridView::widget([
+        'id'=>'mi-grilla',
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-           
-
-           
-            'nombretabla',
-           
-            'codigo',
-            'valor',
+            'nombreModelo',
+            'nombreCampo',
+            'parametro',
+            
             //'valor1',
             //'valor2',
 
@@ -48,7 +44,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         ];
                        // return Html::a('<span class="btn btn-info btn-sm glyphicon glyphicon-pencil"></span>', $url, $options/*$options*/);
                          
-                         $url= \yii\helpers\Url::toRoute(['update-combo-valores','id'=>$model->id]);
+                         $url= \yii\helpers\Url::toRoute(['update-campo-valores','id'=>$model->id]);
                         $options = [
                             'data-pjax'=>'0',
                             //'target'=>'_blank',
@@ -68,6 +64,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 ],
         ],
     ]); ?>
+    
     <?php 
    echo linkAjaxGridWidget::widget([
           
@@ -82,5 +79,5 @@ $this->params['breadcrumbs'][] = $this->title;
     
     
     <?php Pjax::end(); ?>
-</div>
+   </div>
 </div>

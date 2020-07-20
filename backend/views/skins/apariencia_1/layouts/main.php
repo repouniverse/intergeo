@@ -1,6 +1,6 @@
 <?php
 use yii\helpers\Html;
-
+use lo\widgets\modal\ModalAjax;
 /* @var $this \yii\web\View */
 /* @var $content string */
 
@@ -39,7 +39,27 @@ if (Yii::$app->controller->action->id === 'login') {
      <body class="hold-transition <?=\yii::$app->assetManager->bundles['dmstr\web\AdminLteAsset']->skin?>" sidebar-mini">
     <?php $this->beginBody() ?>
     <div class="wrapper">
+        
 
+<?php 
+
+echo ModalAjax::widget([
+    'id' => 'buscarvalor',
+    'header' => 'Buscar Valor',
+    'toggleButton' => false,
+    //'mode'=>ModalAjax::MODE_MULTI,
+    'size'=>\yii\bootstrap\Modal::SIZE_LARGE,    
+    'selector'=>'.botonAbre',
+   // 'url' => $url, // Ajax view with form to load
+    'ajaxSubmit' => true, // Submit the contained form as ajax, true by default
+    //para que no se esconda la ventana cuando presionas una tecla fuera del marco
+    'clientOptions' => ['tabindex'=>'','backdrop' => 'static', 'keyboard' => FALSE]
+    // ... any other yii2 bootstrap modal option you need
+]);
+ ?>  
+        
+        
+        
         <?php \shifrin\noty\NotyWidget::widget([
     'options' => [ // you can add js options here, see noty plugin page for available options
         'dismissQueue' => true,

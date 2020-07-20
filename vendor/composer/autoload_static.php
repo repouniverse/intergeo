@@ -61,6 +61,10 @@ class ComposerStaticInitd88f84c330889b72a2493d1ff11f51c4
         array (
             'mdm\\admin\\' => 10,
         ),
+        'l' => 
+        array (
+            'lo\\widgets\\modal\\' => 17,
+        ),
         'k' => 
         array (
             'kartik\\tabs\\' => 12,
@@ -206,6 +210,10 @@ class ComposerStaticInitd88f84c330889b72a2493d1ff11f51c4
         'mdm\\admin\\' => 
         array (
             0 => __DIR__ . '/..' . '/mdmsoft/yii2-admin',
+        ),
+        'lo\\widgets\\modal\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/loveorigami/yii2-modal-ajax/src',
         ),
         'kartik\\tabs\\' => 
         array (
