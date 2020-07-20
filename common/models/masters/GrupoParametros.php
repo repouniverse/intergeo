@@ -14,6 +14,8 @@ use Yii;
  */
 class GrupoParametros extends \common\models\base\modelBase
 {
+   const PREFIX_ADVANCED = '/';
+    
     /**
      * {@inheritdoc}
      */
@@ -34,6 +36,15 @@ class GrupoParametros extends \common\models\base\modelBase
         ];
     }
 
+     public function behaviors() {
+        return [
+            
+            'auditoriaBehavior' => [
+                'class' => '\common\behaviors\AuditBehavior',
+            ],
+        ];
+    }
+    
     /**
      * {@inheritdoc}
      */

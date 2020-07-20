@@ -7,6 +7,7 @@ use yii\helpers\Html;
 use yii\web\Response;
 use yii\widgets\ActiveForm;
 use common\models\base\modelBase as modeloBase;
+use yii\filters\VerbFilter;
 /**
  * CliproController implements the CRUD actions for Clipro model.
  */
@@ -24,6 +25,19 @@ class baseController extends Controller
      const EDIT_EDITABLE_INDEX='editableIndex';
      const EDIT_EDITABLE_ATTRIBUTE='editableAttribute';  
     
+  public function behaviors()
+    {
+        return [
+            
+            'verbs' => [
+                'class' => VerbFilter::className(),
+                'actions' => [
+                    'deletemodel-for-ajax' => ['post'],
+                    'delete-model' => ['post'],
+                ],
+            ],
+        ];
+    }
 
  /*
   * Procedimiento para gestionar los POSTS Ajax

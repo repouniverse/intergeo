@@ -5,6 +5,7 @@ use common\widgets\selectwidget\selectWidget;
 use common\widgets\cbodepwidget\cboDepWidget as ComboDep;
 use common\helpers\ComboHelper;
 use common\helpers\h;
+use backend\modules\base\Module AS m;
  use kartik\date\DatePicker;
 /* @var $this yii\web\View */
 /* @var $model frontend\modules\sta\models\Alumnos */
@@ -21,7 +22,7 @@ use common\helpers\h;
         <div class="col-md-12">
             <div class="form-group no-margin">
                 
-        <?= Html::submitButton(Yii::t('backend.base', 'Save'), ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton(m::t('verbs', 'Safdve'), ['class' => 'btn btn-success']) ?>
           
 
             </div>

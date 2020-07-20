@@ -59,13 +59,38 @@ return [
         //'loginUrl' => ['admin/user/login'],
             //'class' => 'mdm\admin\models\User',
         'loginUrl' => ['admin/user/login'],
-               ]
+               ],
         
-         
+         'i18n' => [
+            'translations' => [
+              
+                'base.labels'=>[
+                                 'class' => 'yii\i18n\PhpMessageSource',
+                                 'basePath' => '@root/messages',                                          
+                                            ], 
+                'base.forms'=>[
+                                 'class' => 'yii\i18n\PhpMessageSource',
+                                 'basePath' => '@root/messages',                                          
+                                            ], 
+                
+               'base.actions'=>[
+                                 'class' => 'yii\i18n\PhpMessageSource',
+                                 'basePath' => '@root/messages',                                          
+                                  ], 
+                 'base.errors'=>[
+                                 'class' => 'yii\i18n\PhpMessageSource',
+                                 'basePath' =>'@root/messages',                                         
+                       ], 
+                     'base.verbs'=>[
+                                 'class' => 'yii\i18n\PhpMessageSource',
+                                 'basePath' => '@root/messages',                                        
+               
+                                  ],
+                  ], 
         
         
+                ],
     ],
-    
     'modules' => [
                 'settings' => [
                         'class' => 'yii2mod\settings\Module',

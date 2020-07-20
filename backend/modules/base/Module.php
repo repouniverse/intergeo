@@ -29,6 +29,8 @@ class Module extends \yii\base\Module
             'fileMap' => [
                 'modules/base/verbs' => 'verbs.php',
                 'modules/base/validaciones' => 'validaciones.php',
+                'modules/base/labels' => 'labels.php',
+               
                 
             ],
         ];

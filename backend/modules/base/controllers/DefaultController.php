@@ -16,6 +16,10 @@ class DefaultController extends Controller
      */
     public function actionIndex()
     {
+        
+       $model= new  Combovalores();
+       print_r($model->getRoutes());
+       die();
         echo Module::t('verbs','Edit');
         die();
         return $this->render('index');
@@ -48,4 +52,7 @@ class DefaultController extends Controller
             'model' => $model,
         ]);
     }
+    
+    
+    
 }

@@ -1,7 +1,7 @@
 <aside class="main-sidebar">
 
     <section class="sidebar">
-
+      
         <!-- Sidebar user panel -->
        
         <!-- search form -->

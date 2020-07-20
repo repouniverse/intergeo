@@ -114,11 +114,11 @@ class RangeDates extends \yii\base\Component{
           foreach($this->subRanges as $rangoInterno){
                 
                  if($this->isRangeIntoOtherRange($range,$rangoInterno)){
-                    $haycruce=true;break;
+                    $hayCruce=true;break;
                  }
                  
                }
-             if(!$haycruce){
+             if(!$hayCruce){
                  //$this->subRanges[]=$range; 
                   return true;
                  
@@ -144,10 +144,51 @@ class RangeDates extends \yii\base\Component{
     */
   public function findFirstFreePlace($intervalo){
       if(count($this->subRanges)==0)return null;
-      $rango=static::class();
+      $clase=self::class();
+      $rangoAux=null; //Auxiliar para almaenar temporal
+       $rangoLibre=null;
       foreach($this->subRanges as $rango){
+          if(is_null($rangoAux)){ // si es la primera vez
+              $limiteInf=$this->getInitialDate();
+              $limiteSup=$rango->getInitialDate();
+              $intervaloLibre=$limiteSup->{$this->getFunctionScale()}($limiteInf);
+              
+          }else{
+              
+              $limiteInf=$rangoAux->getFinalDate();
+              $limiteSup=$rango->getInitialDate();
+              $intervaloLibre=$limiteSup->{$this->getFunctionScale()}($limiteInf); 
+              
+          }
+          if($intervaloLibre >=0.8*$intervalo){
+              $rangoLibre=new $clase([$limiteInf,$limiteSup]);
+               break;   
+          }
           
+          
+        $rangoAux=$rango;  
       }
+      
+      /*
+           * FALT VERIFICAR EL ULTIMO TRAMO, ES DECIR 
+           * ENTRE EL EXTERMO FINAL DEL ULTIMO RANGO Y EL EXERMO FINAL 
+           * DEL RANGO PADRE 
+           */
+          IF(is_null($rangoLibre)){//Sio no ha encontrado nada anteriormete en el bucle
+              $limiteInf=$rangoAux->getFinalDate();
+              $limiteSup=$rango->getFinalDate();
+              if($limiteInf->lt($limiteSup)){
+                 $intervaloLibre=$limiteSup->{$this->getFunctionScale()}($limiteInf); 
+                 if($intervaloLibre >=0.8*$intervalo){
+                      $rangoLibre=new $clase([$limiteInf,$limiteSup]);
+                     }
+              }
+              
+              
+          }
+          
+      
+      return $rangoLibre;
   } 
    
    

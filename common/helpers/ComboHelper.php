@@ -141,6 +141,8 @@ class ComboHelper  {
         foreach($paths as $clave=>$valor){
             $models[$valor]=\common\helpers\FileHelper::getShortName($valor);
         }
+        asort($models);
+      
        return $models;
       
     }
@@ -204,5 +206,16 @@ class ComboHelper  {
                 'codmon','codmon');
     }
     
-     
+     /*
+      * Obtiene los valores de los camos de un modelo
+      * solo hay que darlela ruta del nombre de la clase 
+      */
+    public function getCboCamposFromTable($nombreclase){
+        $modelo=new $nombreclase();
+        $valores=[];
+        foreach(array_keys($modelo->attributes) as $key=>$attribute){
+            $valores[$attribute]=$modelo->getAttributeLabel($attribute);
+        }
+        return $valores;
+    }
 }

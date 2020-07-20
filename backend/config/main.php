@@ -31,10 +31,10 @@ return [
         'i18n' => [
                     'translations' => [
                                     
-                                    'backend.base' => [
+                                    'base.names' => [
                                             'class' => 'yii\i18n\PhpMessageSource',
                                             //'sourceLanguage' => 'en-US',
-                                            'basePath' => '@backend/modules/base/messages'
+                                            'basePath' => '@root/messages'
                                             ],
                                     ],
                 ],
