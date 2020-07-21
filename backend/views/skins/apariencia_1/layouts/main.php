@@ -36,7 +36,8 @@ if (Yii::$app->controller->action->id === 'login') {
         <title><?= Html::encode($this->title) ?></title>
         <?php $this->head() ?>
     </head>
-     <body class="hold-transition <?=\yii::$app->assetManager->bundles['dmstr\web\AdminLteAsset']->skin?>" sidebar-mini">
+     <body class="hold-transition <?= \backend\views\skins\apariencia_1\AdminLteHelper::skinClass() ?>" sidebar-mini">
+
     <?php $this->beginBody() ?>
     <div class="wrapper">
         
