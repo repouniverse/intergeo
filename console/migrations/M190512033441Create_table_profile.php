@@ -35,11 +35,11 @@ class M190512033441Create_table_profile extends  baseMigration
            $this->collateTable());
        $this->addForeignKey($this->generateNameFk($table), $table,
               'user_id', self::NAME_TABlE_USER,'id');
-        $this->putCombo($table, 'tipo',[
+        /*$this->putCombo($table, 'tipo',[
                  'ALUMNO',                 
                  'TRABAJADOR',
                  'PSICOLOGO',
-             ]);
+             ]);*/
         }
         
          
