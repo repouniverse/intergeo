@@ -66,8 +66,13 @@ class AuditBehavior extends Behavior
     public function doBeforeSave(){
         //echo "hola"; die();
      //if($this->isInTransaction())
-       $owner=$this->owner;     
-          $ip=yii::$app->request->getRemoteIP();
+       $owner=$this->owner; 
+      if(Yii::$app instanceof Yii\web\Application){
+       $ip=yii::$app->request->getRemoteIP();   
+      }else{
+         $ip='';     
+      }
+          
        $username=yii::$app->user->identity->username;
        $controllerId=yii::$app->controller->id;
        $currentUrl=Yii::$app->request->getUrl();
@@ -114,7 +119,11 @@ class AuditBehavior extends Behavior
      //if($this->isInTransaction())
        $owner=$this->owner;
          $owner=$this->owner;
-          $ip=yii::$app->request->getRemoteIP();
+         if(Yii::$app instanceof Yii\web\Application){
+       $ip=yii::$app->request->getRemoteIP();   
+      }else{
+         $ip='';     
+      }
        $username=yii::$app->user->identity->username;
        $controllerId=yii::$app->controller->id;
        $currentUrl=Yii::$app->request->getUrl();
@@ -157,7 +166,11 @@ class AuditBehavior extends Behavior
        // if($this->isInTransaction()){
          $model=New Activerecordlog();
            $owner=$this->owner;
-          $ip=yii::$app->request->getRemoteIP();
+         if(Yii::$app instanceof Yii\web\Application){
+       $ip=yii::$app->request->getRemoteIP();   
+      }else{
+         $ip='';     
+      }
        $username=yii::$app->user->identity->username;
        $controllerId=yii::$app->controller->id;
        $currentUrl=Yii::$app->request->getUrl();

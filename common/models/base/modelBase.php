@@ -828,7 +828,7 @@ class modelBase extends \yii\db\ActiveRecord
             //yii::error($myAttributesVerify); 
             //yii::error($myAttributesVerify);
            // echo self::find()->andWhere($myAttributesVerify)->createCommand()->getRawSql();die();
-            if(!(self::find()->andWhere(['user_id'=>1]/*$myAttributesVerify*/)->exists())){
+            if(!(self::find()->andWhere($myAttributesVerify)->exists())){
                          //yii::error($myAttributesVerify);       
 
                 try{
@@ -842,7 +842,8 @@ class modelBase extends \yii\db\ActiveRecord
                        //print_r($model->attributes);die();
                        
                  IF(!$model->save()){
-                     echo "fallo";die();
+                     //echo "fallo";die();
+                    // print_r($model->getErrors());die();
                      yii::error($model->getErrors(),__METHOD__);
                      // print_r($model->getErrors());die();
                      return false;

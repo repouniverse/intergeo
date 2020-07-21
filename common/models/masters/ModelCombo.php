@@ -54,9 +54,9 @@ class ModelCombo extends \common\models\base\modelBase
     public function attributeLabels()
     {
         return [
-            'id' => m::t('messages', 'ID'),
-            'parametro' => m::t('messages', 'Parametro'),
-            'clavecentro' => m::t('messages', 'Clavecentro'),
+            'id' => yii::t('base.labels', 'ID'),
+            'parametro' => yii::t('base.labels', 'Parametro'),
+            'clavecentro' => yii::t('base.labels', 'Clavecentro'),
         ];
     }
 

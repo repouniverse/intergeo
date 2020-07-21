@@ -9,15 +9,16 @@
 *.png
 *.xls
 *.pdf
+
 #netbeans
 /nbproject
 
 frontend/web/assets
 frontend/runtime
-frontend/config/main-local.php
+
 backend/web/assets
 backend/runtime
-backend/config/main-local.php
+common/config/main-local.php
 
 
 
